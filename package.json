@@ -1,0 +1,29 @@
+{
+  "name": "alfalab-gemini-example",
+  "version": "0.1.0",
+  "description": "Gemini demo for AlfaLab",
+  "repository": "https://github.com/teryaew/alfalab-gemini-example",
+  "author": "Mitya Teryaew <mitya.teryaew@gmail.com> (https://github.com/teryaew)",
+  "license": "WTFPL",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gemini": "^4.12.2",
+    "http-server": "^0.9.0",
+    "npm-run-all": "^3.1.1",
+    "phantomjs-prebuilt": "^2.1.12"
+  },
+  "scripts": {
+    "gemini": "npm-run-all --silent -p -r phantom gemini:test",
+    "gemini-update": "npm-run-all --silent -p -r phantom gemini:gather",
+    "gemini:test": "gemini test --reporter html --reporter flat",
+    "gemini:gather": "gemini update",
+    "phantom": "phantomjs --webdriver=8887 --webdriver-loglevel=ERROR",
+    "server": "http-server -p 8888"
+  },
+  "keywords": [
+    "gemini",
+    "demo",
+    "alfalab"
+  ]
+}
